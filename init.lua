@@ -4,4 +4,7 @@ require "cliffcantcode.keymaps"
 require "cliffcantcode.plugins"
 require "cliffcantcode.colorscheme"
 require "cliffcantcode.project"
+-- autopairs requires cmp
+require "cliffcantcode.cmp"
+require "cliffcantcode.autopairs"
 require "cliffcantcode.lsp"
