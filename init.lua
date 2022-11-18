@@ -1,0 +1,7 @@
+require "cliffcantcode.impatient"
+require "cliffcantcode.options"
+require "cliffcantcode.keymaps"
+require "cliffcantcode.plugins"
+require "cliffcantcode.colorscheme"
+require "cliffcantcode.project"
+require "cliffcantcode.lsp"
