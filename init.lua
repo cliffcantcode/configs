@@ -7,4 +7,6 @@ require "cliffcantcode.project"
 -- autopairs requires cmp
 require "cliffcantcode.cmp"
 require "cliffcantcode.autopairs"
+require "cliffcantcode.telescope"
+require "cliffcantcode.treesitter"
 require "cliffcantcode.lsp"
