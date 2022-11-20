@@ -20,6 +20,7 @@ vim.opt.smartindent = true 			                -- make indenting smarter
 vim.opt.splitright = true                       -- force all screen splits to be to the right of the current window 
 vim.opt.splitbelow = true                       -- force all screen splits to be below the current window
 vim.opt.swapfile = false                        -- creates a swapfile
+vim.opt.termguicolors = true                    -- set term gui colors (most termicals support this)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (milliseconds)
 vim.opt.undofile = true                         -- enables persistent undo
@@ -31,6 +32,7 @@ vim.opt.showcmd = false                         -- hide (partial) command in the
 vim.opt.ruler = false                           -- hide the line and column position of the cursor
 vim.opt.wrap = false				                    -- display lines as one long line
 vim.opt.scrolloff = 8				                    -- minimal number of lines to keep above or below the cursor
+vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.iskeyword:append("-")			              -- treat words with '-' as single words
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.linebreak = true
