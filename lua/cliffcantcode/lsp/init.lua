@@ -5,4 +5,5 @@ end
 
 require "cliffcantcode.lsp.mason"
 require("cliffcantcode.lsp.handlers").setup()
+require "cliffcantcode.lsp.null-ls"
 
