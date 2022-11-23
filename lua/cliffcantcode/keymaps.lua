@@ -33,8 +33,10 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- close buffers
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- better paste
+keymap("v", "p", '"_dP"', opts)
 
 -- clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -49,4 +51,10 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 
 -- Plugins --
+
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- Telescope
+
 

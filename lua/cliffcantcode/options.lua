@@ -27,12 +27,17 @@ vim.opt.undofile = true                         -- enables persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000 ms default)
 vim.opt.cursorline = false 			                -- highlight the current line; TODO change once colors are better
 vim.opt.number = true				                    -- set numbered lines
+vim.opt.laststatus = 3                          -- only the last window will always have a status line
 vim.opt.relativenumber = true			              -- sets line numbers to be increasing away from the cursor's line
 vim.opt.showcmd = false                         -- hide (partial) command in the last line of the screen (for performance)
 vim.opt.ruler = false                           -- hide the line and column position of the cursor
 vim.opt.wrap = false				                    -- display lines as one long line
 vim.opt.scrolloff = 8				                    -- minimal number of lines to keep above or below the cursor
+vim.opt.sidescrolloff = 8                       -- minimal number of columns to kee to the left and right of the cursor if wrap is `false`
+vim.opt.fillchars.eob=" "                       -- show empty lines at the end of a buffer as ` ` {default `~`}
+vim.opt.shortmess: append "c"                   -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "the only match", "Pattern not found"
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.iskeyword:append("-")			              -- treat words with '-' as single words
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- keys allowed to move to the previous/next line when the beginning/end of line is reached
+vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequences of letters which describes how autoformatting is to be done 
 vim.opt.linebreak = true
