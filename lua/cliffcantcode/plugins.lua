@@ -41,6 +41,7 @@ packer.init {
 	},
 }
 
+-- Plugins
 return packer.startup(function(use)
   -- My plugins
 	use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
@@ -59,6 +60,7 @@ return packer.startup(function(use)
   use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
+  use "voldikss/vim-floaterm"
 
 	-- Colorschemes
 	use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }

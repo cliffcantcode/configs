@@ -61,6 +61,11 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
+-- FloaTerm
+keymap("n", "<leader>t", ":FloatermNew --name=myfloat --height=0.9 --width=0.8 --autoclose=2 fish <CR> ")
+keymap("n", "t", ":FloatermToggle myfloat<CR>")
+keymap("t", "<Esc>", "<C-\\><C-n>:q<CR>")
+
 -- GIT
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
