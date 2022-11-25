@@ -48,7 +48,36 @@ for _, server in pairs(servers) do
   local require_ok, conf_opts = pcall(require, "cliffcantcode.lsp.settings." .. server)
   if require_ok then
     opts = vim.tbl_deep_extend("force", conf_opts, opts)
-  end 
+  end
+
+  if server == "rust_analyzer" then
+    require("rust-tools").setup {
+      tools = {
+        on_initialized = function()
+          vim.cmd [[
+            autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+          ]]
+        end,
+      },
+      server = {
+        on_attach = require("cliffcantcode.lsp.handlers").on_attach,
+        capabilities = require("cliffcantcode.lsp.handlers").capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            lens = {
+              enable = true,
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      },
+    }
+
+    goto continue
+  end
 
   lspconfig[server].setup(opts)
+  ::continue::
 end

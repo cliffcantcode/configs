@@ -1,4 +1,4 @@
-local cmp_status_ok, cmp = pcall(retuire, "cmp")
+local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
 end
@@ -44,9 +44,11 @@ local kind_icons = {
 }
 
 cmp.setup({
+  -- Enable LSP snippets
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
 
@@ -62,12 +64,15 @@ cmp.setup({
     }),
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm({ 
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expandable() then
-        luadsnip.expand()
+        luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       elseif check_backspace() then
@@ -109,10 +114,13 @@ cmp.setup({
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "vsnip", keyword_length = 2 },
+    { name = "calc" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
