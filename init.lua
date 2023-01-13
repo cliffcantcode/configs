@@ -11,6 +11,7 @@ require "cliffcantcode.indentline"
 require "cliffcantcode.autocommands"
 require "cliffcantcode.comment"
 require "cliffcantcode.nvim-tree"
+require "cliffcantcode.rust-tools"
 -- autopairs requires cmp
 require "cliffcantcode.cmp"
 require "cliffcantcode.autopairs"

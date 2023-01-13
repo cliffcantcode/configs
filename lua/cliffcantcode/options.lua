@@ -41,6 +41,3 @@ vim.opt.iskeyword:append("-")			                    			-- treat words with '-' a
 vim.opt.whichwrap:append("<,>,[,],h,l")               			-- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.formatoptions:remove({ "c", "r", "o" })       			-- This is a sequences of letters which describes how autoformatting is to be done 
 vim.opt.linebreak = true
-
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
